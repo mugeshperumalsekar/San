@@ -1,0 +1,36 @@
+<hazelcast xmlns="http://www.hazelcast.com/schema/config"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://www.hazelcast.com/schema/config
+           http://www.hazelcast.com/schema/config/hazelcast-config-5.5.xsd">
+
+    <!-- Network Configuration -->
+    <network>
+        <join>
+            <!-- Configure TCP/IP join -->
+            <tcp-ip enabled="true">
+                <member>192.168.1.58</member> <!-- Replace with your actual member list -->
+            </tcp-ip>
+            <!-- Configure Multicast join (disabled as per your settings) -->
+            <multicast enabled="false"/>
+        </join>
+    </network>
+
+    <!-- Map Configuration -->
+    <map name="default">
+        <backup-count>1</backup-count>
+    </map>
+
+    <map name="OfacData">
+        <backup-count>1</backup-count>
+        <time-to-live-seconds>600</time-to-live-seconds>
+    </map>
+    <map name="OfacDataDetail">
+        <backup-count>1</backup-count>
+        <time-to-live-seconds>600</time-to-live-seconds>
+    </map>
+    <map name="myMap">
+        <backup-count>1</backup-count>
+        <time-to-live-seconds>600</time-to-live-seconds>
+    </map>
+</hazelcast>
+

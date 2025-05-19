@@ -1,0 +1,9 @@
+import com.ponsun.san.algorithm.cdo.CriminalRuleCDO;
+
+rule "Check criminal score"
+    when
+        criminalRuleCDO : CriminalRuleCDO(score1 >= searchscore || score2 >= searchscore || score3 >= searchscore || score4 >= searchscore);
+    then
+        criminalRuleCDO.setStatus("success");
+
+end;
